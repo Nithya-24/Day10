@@ -7,8 +7,8 @@ public class AddressBook {
 	String address;
 	String city;
 	String state;
-	String zip;
-	String phoneNumber;
+	int zip;
+	long phoneNumber;
 	String email;
 	
 	// Scanner sc = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class AddressBook {
 	   
 	    
 	
-	    AddressBook( String firstName, String lastName, String address, String city, String state, String zip, String phoneNumber, String email ) {
+	    AddressBook( String firstName, String lastName, String address, String city, String state, int zip, long phoneNumber, String email ) {
 			// System.out.println("Enter the Persons Details ");
 					
 			this.firstName = firstName;

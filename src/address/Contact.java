@@ -1,115 +1,76 @@
 package address;
 
-import java.util.HashMap;
+public class Contact {
+    String firstName;
+    String lastName;
+    String address;
+    String city;
+    String state;
+    int zip;
+    long phoneNumber;
+    String email;
 
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public class Contact {
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	String firstName, lastName, phoneNumber, email, address, toString;
+    public String getLastName() {
+        return lastName;
+    }
 
-	/**
-	 * Default constructor used for testing. This must be inserted here since we
-	 * have a custom constructor and java no longer creates a default
-	 * constructor when you have a custom constructor. You must initialize your
-	 * objects here.
-	 */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public Contact() {
-		firstName = lastName = phoneNumber = email = address = toString = null;
-		this.customField = new HashMap<String,String>();
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public Contact(String firstName, String lastName, String phoneNumber,
-			String email, String address) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.address = address;
-		this.customField = new HashMap<String,String>();
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getCity(){
+        return city;
+    }
 
-	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+    public void setCity(String city){
+        this.city = city;
+    }
 
-	}
+    public String getState(){
+        return state;
+    }
 
-	
-	public String getLastName() {
-		return lastName;
-	}
+    public void setState(String state){
+        this.state = state;
+    }
 
-	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public  int getZip(){
+        return zip;
+    }
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
+    public void setZip(int zip){
+        this.zip = zip;
+    }
 
-	
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public String getAddress() {
-		return address;
-	}
-	
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	
-	public HashMap<String, String> getCustomFields() {
-//			if(customField == null)
-//				customField = new HashMap<String,String>();			
-			return customField;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setCustomField(String fieldName, String fieldValue) {
-//		if(customField == null)
-//			customField = new HashMap<String,String>();
-		customField.put(fieldName, fieldValue);
-	}
-
-	/**
-	 * Provides a string representation of a contact. Use your string parsing
-	 * knowledge to make the string look like what's required by the contact
-	 * tests.
-	 * 
-	 * @return a string representation of a contact
-	 */
-	public String toString() {
-
-		toString = "First Name: " + firstName + "\nLast Name: " + lastName
-				+ "\nPhone Number: " + phoneNumber + "\nEmail Address: "
-				+ email + "Address: " + address;
-		if (customField.size() == 0)
-			return toString;
-		else {
-			for (String key : customField.keySet())
-				toString = toString + "\n" + key + ": " + customField.get(key);
-			return toString;
-		}
-
-	}
-
-	//Declares a new HashMap so that "customField" can be stored
-	private HashMap<String, String> customField;
-
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
