@@ -3,23 +3,38 @@ package address;
 import java.util.Scanner;
 
 public class Main {
-	 Scanner input = new Scanner(System.in);
+	 Scanner sc = new Scanner(System.in);
 
 	public int mainMenu() {
-        System.out.println("Main Menu: 1.Add Contact");
-        System.out.print("Enter your choice: ");
-        return input.nextInt();
+        System.out.println(" 1.Add Contact");
+        System.out.println(" 2.Edit Contact");
+        System.out.println(" 3.Delete Contact");
+        System.out.println("4. Exit");
+        System.out.println("Enter your choice: ");
+        return sc.nextInt();
     }
 
     public void userSelection() {
         ContactDetail contactDetail = new ContactDetail();
-        do {
-            int choice = mainMenu();
-            if (choice == 1) {
+      
+        loop :do {
+        	int choice = mainMenu();
+            switch(choice) {
+            case 1:
                 contactDetail.addNewContact();
                 System.out.println("Contact added ");
-            } else {
                 break;
+            case 2: 
+            	contactDetail.editContactDetail(ScannerUtil.getString("Enter the First name to edit: "));
+            	System.out.println("Contact edited ");
+                break;
+            case 3: 
+            	contactDetail.deleteContactDetail(ScannerUtil.getString("Enter the First name to delete: "));
+            	System.out.println("Contact Deleted ");
+                break;
+            case 4: 
+            	break loop;
+            	
             }
         } while (true);
     }
